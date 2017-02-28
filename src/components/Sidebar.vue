@@ -3,6 +3,12 @@
         <note></note>
         <note></note>
         <note></note>
+        <note></note>
+        <note></note>
+        <note></note>
+        <note></note>
+        <note></note>
+        <note></note>
         <!-- <div class="sidebar__content">
             <a href="#">Start new note!</a>
         </div>
@@ -29,7 +35,7 @@ export default {
         height: 100%;
         min-width: 28%;
         border-right: 2px solid #eee;
-        // overflow-y: scroll;
+        overflow-y: scroll;
 
         &__content {
             padding: 30px;
