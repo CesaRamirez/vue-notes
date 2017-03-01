@@ -4,14 +4,17 @@
             <span class="note__delete-icon">&times;</span>
         </a>
         <div class="note__content">
-            <a href="#" class="note__title">One Note</a>
-            <p class="note__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <a href="#" class="note__title">{{ note.title }}</a>
+            <p class="note__body">{{ note.body }}</p>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+  props: [
+    'note'
+  ]
 }
 </script>
 
