@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="pad">
-        <input type="text" class="pad__title" placeholder="Untitled note" v-model="note.title">
-        <textarea class="pad__text" placeholder="Start writing..." v-model="note.body"></textarea>
+        <input type="text" class="pad__title" placeholder="Untitled note" v-model="note.title" v-on:keydown="save">
+        <textarea class="pad__text" placeholder="Start writing..." v-model="note.body" v-on:keydown="save"></textarea>
         <footer class="pad__footer">
             <ul class="pad__footer-items">
                 <li class="pad__footer-item">Words: x</li>
@@ -12,14 +12,23 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   computed: {
     ...mapGetters([
       'note'
     ])
+  },
+  methods: {
+    ...mapActions([
+      'saveNote'
+    ]),
+    save () {
+      this.saveNote()
+    }
   }
+
 }
 </script>
 
