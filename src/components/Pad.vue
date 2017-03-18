@@ -4,7 +4,7 @@
         <textarea class="pad__text" placeholder="Start writing..." v-model="note.body" v-on:keydown="save"></textarea>
         <footer class="pad__footer">
             <ul class="pad__footer-items">
-                <li class="pad__footer-item">Words: x</li>
+                <li class="pad__footer-item">Words: {{ wordCount }}</li>
                 <li class="pad__footer-item pad__footer-item--right">Last Saved: {{ lastSaved }}</li>
             </ul>
         </footer>
@@ -18,7 +18,8 @@ export default {
   computed: {
     ...mapGetters([
       'note',
-      'lastSaved'
+      'lastSaved',
+      'wordCount'
     ])
   },
   methods: {
