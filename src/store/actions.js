@@ -27,6 +27,18 @@ export const openNote = ({
   commit(mutations.SET_CURRENT_NOTE, note)
 }
 
+export const deleteNote = ({
+  commit,
+  dispatch,
+  state
+}, id) => {
+  if (id === state.note.id) {
+    dispatch('clearCurrentNote')
+  }
+  commit(mutations.DELETE_NOTE, id)
+  dispatch('storeNotes')
+}
+
 export const startSaveTimeout = ({
   commit,
   dispatch,
